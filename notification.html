@@ -6,40 +6,37 @@
 </head>
 
 <body>
+<form id="form1" name="form1" method="post" action="">
+     {% csrf_token %}
 <table width="536" height="223"  align="center">
 <th colspan="2"><h2>ADD NOTIFICATION</h2></th>
   <tr>
     <td width="304">Enter Title </td>
-    <td width="216"><form id="form1" name="form1" method="post" action="">
+    <td width="216">
       <label>
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield" required pattern="[a-z A-Z]{1,26}"/>
         </label>
-    </form>    </td>
+        </td>
   </tr>
   <tr>
     <td>Description</td>
-    <td><form id="form2" name="form2" method="post" action="">
+    <td>
       <label>
-        <textarea rows="10" cols="15" name="textarea"></textarea>
+        <textarea rows="10" cols="15" name="textarea" required></textarea>
         </label>
-    </form>    </td>
+   </td>
   </tr>
   <tr>
-    <td><form id="form4" name="form4" method="post" action="">
+    <td>
       <label>
         <input type="submit" name="Submit2" value="ADD" />
         </label>
-    </form>
+
     </td>
-    <td><form id="form5" name="form5" method="post" action="">
-      <label>
-        <input type="submit" name="Submit3" value="VIEW" />
-        </label>
-    </form>
-    </td>
+
   </tr>
 </table>
-<form id="form3" name="form3" method="post" action="">
+
   <label></label>
 </form>
 </body>
