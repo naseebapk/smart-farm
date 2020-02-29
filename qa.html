@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+ {% csrf_token %}
+<table align="center" width="400" border="1" >
+<th colspan="4"><h2>Q&A </h2></th>
+  <tr>
+    <td>Username</td>
+    <td>Question</td>
+      <td>Reply</td>
+
+  </tr>
+
+     {% if objval %}
+        {% for ob in objval %}
+        <tr>
+
+            <td>{{ ob.uid }}</td>
+            <td>{{ ob.question }}</td>
+ <td><a href="{% url 'answer' idd=ob.qid %}">Answer</a> </td>
+     {% endfor %}
+        {% endif %}
+
+
+
+
+  </tr>
+</table>
+ </form>
+</body>
+</html>
