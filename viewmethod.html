@@ -6,22 +6,31 @@
 </head>
 
 <body>
-<table  align="center" width="200" >
+
+<body>
+<table  align="center" width="500" >
   <tr>
-    <td>Id</td>
+
     <td>Title</td>
+        <td>Date</td>
     <td>Description</td>
   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+  {% if objval %}
+        {% for ob in objval %}
+        <tr>
+
+            <td>{{ ob.title }}</td>
+            <td>{{ ob.date }}</td>
+            <td>{{ ob.description }}</td>
+
+  <td><a href="{% url 'delete' idd=ob.id %}">Delete</a> </td>
+
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+
 </table>
 </body>
 </html>
+
